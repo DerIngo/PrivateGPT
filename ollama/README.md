@@ -1,8 +1,11 @@
 # PrivateGPT with Ollama
-## OpenAI API key
-You need an OpenAI API key from <a href="https://platform.openai.com/api-keys">OpenAI</a><br/>
-The key itself is free, but I needed to charge my account with 5$ to get it working..<br/>
-You have to copy file <i>.env.example</i> to <i>.env</>> and enter your OpenAI API key in file <i>.env</i>.
+## Ollama
+Install Ollama from <a href="https://ollama.com/">https://ollama.com/</a><br/>
+Start Ollama:
+```
+export OLLAMA_HOST=0.0.0.0:11434
+ollama serve
+```
 
 ## Build PrivateGPT Image
 ```
