@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  privategpt:
+    image: privategptopenai
+    container_name: privategptopenai
+    ports:
+      - "8001:8001"
+    volumes:
+      - privategpt:/app
+      - ../models/cache:/app/privateGPT/models/cache
+    environment:
+      - PGPT_PROFILES=openai
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: /bin/bash -c "poetry run python scripts/setup && make run" 
+    
+volumes:
+  privategpt:

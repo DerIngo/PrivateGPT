@@ -1,2 +1,7 @@
 .settings
 .project
+
+models/cache
+openai/models/cache
+
+**/*.env
