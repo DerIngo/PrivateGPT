@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  privategpt:
+    image: privategptollama
+    container_name: privategptollama
+    ports:
+      - "8001:8001"
+    volumes:
+      - privategpt:/app
+      - ../models/cache:/app/privateGPT/models/cache
+    environment:
+      - PGPT_PROFILES=ollama
+      - OLLAMA_LLM_MODEL=mistral
+      - OLLAMA_API_BASE=http://${DOCKER_GATEWAY_HOST}:11434
+    command: /bin/bash -c "poetry run python scripts/setup && make run" 
+    
+volumes:
+  privategpt:
