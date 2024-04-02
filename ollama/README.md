@@ -2,6 +2,7 @@
 ## Ollama
 Install Ollama from <a href="https://ollama.com/">https://ollama.com/</a><br/>
 Start Ollama:
+
 ```
 export OLLAMA_HOST=0.0.0.0:11434
 ollama serve
